@@ -26,11 +26,11 @@ public userpassword:string;
    // this.router.navigate([routeNames.LOGINFORM]);
   }
 
-  private forgetPassword():void
+  forgetPassword():void
   {
     this.router.navigate([routeNames.FORGETPWD]);
   }
-  private signup():void
+ signup():void
   {
     this.router.navigate([routeNames.SIGNUPFORM]);
   }

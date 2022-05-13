@@ -1,27 +1,57 @@
-# DemoApp
+# Below is the work flow master workflow  
+# Workflow configuration
+# File path: .github/workflows/master-crypto-payment(production).yml
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.0.
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
 
-## Development server
+name: Build and deploy JAR app to Azure Web App - crypto-payment
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
 
-## Code scaffolding
+jobs:
+  build:
+    runs-on: windows-latest
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    steps:
+      - uses: actions/checkout@v2
 
-## Build
+      - name: Set up Java version
+        uses: actions/setup-java@v1
+        with:
+          java-version: '8'
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+      - name: Build with Maven
+        run: mvn clean install
 
-## Running unit tests
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v2
+        with:
+          name: java-app
+          path: '${{ github.workspace }}/target/*.jar'
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+  deploy:
+    runs-on: windows-latest
+    needs: build
+    environment:
+      name: 'production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
-## Running end-to-end tests
+    steps:
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v2
+        with:
+          name: java-app
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+      - name: Deploy to Azure Web App
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'crypto-payment'
+          slot-name: 'production'
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_1234 }}
+          package: '*.jar'

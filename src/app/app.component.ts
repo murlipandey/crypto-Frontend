@@ -22,11 +22,11 @@ export class AppComponent implements OnInit{
   
   }
 
-  private forgetPassword():void
+   forgetPassword():void
   {
   //  this.router.navigate([routeNames.FORGETPWD]);
   }
-  private signup():void
+   signup():void
   {
    // this.router.navigate([routeNames.SIGNUPFORM]);
   }
