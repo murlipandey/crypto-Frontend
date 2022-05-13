@@ -1,0 +1,40 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+  
+
+<body>
+	<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <img width=100% height=200% style="border: 1px solid black" src="../assets/crypto.jpg">
+</div>
+
+    <div class="loginbox">
+     <img src="../assets/avatar.png"  class=avatar>
+    <h1>
+      Login Here
+    </h1>
+    <form >
+    <p> User Name</p>
+    
+    <input id="username" type="text" name="username" height=30% width=50% placeholder="Enter your Name" >
+    <p> Password </p>
+    <input id="userpassword" type="password" name="userpassword" placeholder="Enter your Password">
+    <p>  </p>
+
+    <nav>
+         
+    <input type="submit" name=""  Value="Login" (click)="loginPage()" >
+       
+  <h2><a   routerLinkActive="active" (click)="signup()">  Sign Up   </a></h2>
+        
+       
+  <h2><a routerLinkActive="active" (click)="forgetPassword()">Forget Password?</a></h2>
+</nav>  
+   </form>
+    </div>
+
+      
+    </body>
+<router-outlet></router-outlet>

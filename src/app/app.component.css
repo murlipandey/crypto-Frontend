@@ -1,0 +1,17 @@
+#app-wrapper
+{
+    height:100vh;
+}
+
+#background
+{
+    height:150vh;
+}
+
+.desktop
+{
+    max-width:800px;
+    margin:auto;
+    padding:20px 15px 40px 15px;
+}
+

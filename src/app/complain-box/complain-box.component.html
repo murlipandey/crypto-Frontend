@@ -1,0 +1,90 @@
+
+
+
+<div class="main">
+  <div class="search">
+    <input type="text" name="Search" name="search" [(ngModel)]="searchText" autocomplete="off">
+     <button type="button">
+      <span class="glyphicon glyphicon-search"></span> Search
+    </button>
+  </div>
+
+
+  <div style="text-align: center">
+<table>
+  <tr>
+    <th>Complaint ID</th>
+    <th>Service Order Number</th>
+    <th>Status</th>
+  </tr>
+
+  <!--<tr>
+    <td>001</td>
+    <td>1256</td>
+    <td>In Progress</td>
+  </tr>
+  <tr>
+    <td>002</td>
+    <td>1566</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>003</td>
+    <td>8965</td>
+    <td>In Progress</td>
+  </tr>
+  <tr>
+    <td>001</td>
+    <td>1256</td>
+    <td>In Progress</td>
+  </tr>
+  <tr>
+    <td>001</td>
+    <td>1256</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>001</td>
+    <td>1256</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>001</td>
+    <td>1256</td>
+    <td>In Progress</td>
+  </tr>
+  <tr>
+    <td>005</td>
+    <td>1452</td>
+    <td>Done</td>
+  </tr>-->
+
+  <tbody>
+    <tr *ngFor="let item of collection.data |paginate: config">
+      <th scope="row">{{item.id}}</th>
+      <td>{{item.value}}</td>
+        <td>{{item.status}}</td>
+    </tr>
+  </tbody>
+</table>
+
+  <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+
+</div>
+
+
+
+<div class="comment">
+  <form action="">
+    Put you Comment Here:<br>
+
+    <textarea name="paragraph_text" cols="45" rows="5"></textarea> <br>
+    <input type="submit" class="btn btn-success" name="Submit" (click)="Submit()"> <br>
+
+    <img *ngFor='let url of urls' [src]="url" height="100" width="100">
+    <input type="file" accept='image/*' multiple (change)="preview($event)" />
+
+
+  </form>
+</div>
+</div>

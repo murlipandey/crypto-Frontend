@@ -1,0 +1,127 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<div style="text-align:center">
+<h1>
+  Welcome to Sign Up !
+</h1>
+
+</div>
+
+<body>
+  <form style="text-align:center">
+<div class="row">
+  <div class="col-sm-6">
+    <label class="colLeft">UserId: </label></div>
+  <div class="col-sm-6">
+    <input type="text" name="UserID" class="colRight" (change)="sharedservice.setUserID($event.target.value)" required></div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <label class="colLeft">Password: </label></div>
+  <div class="col-sm-6">
+    <input type="password" name="Password" class="colRight"  (change)="sharedservice.setPassword($event.target.value)"></div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <label class="colLeft">FirstName: </label></div>
+  <div class="col-sm-6">
+    <input type="text" name="FirstName" class="colRight"  (change)="sharedservice.setFirstName($event.target.value)"></div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <label class="colLeft">LastName: </label></div>
+  <div class="col-sm-6">
+    <input type="text" name="LastName" class="colRight"  (change)="sharedservice.setLastName($event.target.value)"></div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <label class="colLeft">MobileNumber: </label></div>
+  <div class="col-sm-6">
+    <input type="text" name="MobileNumber"  class="colRight" (change)="sharedservice.setMobileNumber($event.target.value)" ngModel pattern="^\d{10}$" required></div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <label class="colLeft">emailId: </label></div>
+  <div class="col-sm-6">
+    <input type="email" name="emailId"  class="colRight" (change)="sharedservice.setemailId($event.target.value)"></div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <label class="colLeft">LastAddressLine1:</label></div>
+  <div class="col-sm-6">
+    <input type="text" name="LastAddressLine1"  class="colRight" (change)="sharedservice.setLastAddressLine1($event.target.value)"></div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <label class="colLeft">AddressLine2:</label></div>
+  <div class="col-sm-6" >
+    <input type="text" name="AddressLine2"  class="colRight" (change)="sharedservice.setAddressLine2($event.target.value)"></div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <label class="colLeft">AddressLine3: </label></div>
+  <div class="col-sm-6" >
+    <input type="text" name="AddressLine3"  class="colRight" (change)="sharedservice.setAddressLine3($event.target.value)"></div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <label class="colLeft">City: </label></div>
+  <div class="col-sm-6">
+     <input type="text" name="City"  class="colRight" (change)="sharedservice.setCity($event.target.value)"></div>
+</div>
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <label class="colLeft">State: </label></div>
+  <div class="col-sm-6">
+     <input type="text" name="State" class="colRight"  (change)="sharedservice.setState($event.target.value)"></div>
+</div>
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <label class="colLeft">Country: </label></div>
+  <div class="col-sm-6">
+     <input type="text" name="Country" class="colRight"  (change)="sharedservice.setCountry($event.target.value)"></div>
+</div>
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <label class="colLeft">Zip: </label></div>
+  <div class="col-sm-6">
+     <input type="text" name="Zip"  class="colRight" (change)="sharedservice.setZip($event.target.value)"></div>
+</div>
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <label class="colLeft">Zip4: </label></div>
+  <div class="col-sm-6" >
+    <input type="text" name="Zip4" class="colRight"  (change)="sharedservice.setZip4($event.target.value)"></div>
+</div>
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <label class="colLeft">AadharNumber: </label></div>
+  <div class="col-sm-6">
+     <input type="text" name="AadharNumber" class="colRight"  (change)="sharedservice.setAadharNumber($event.target.value)"></div>
+</div>
+
+<button  class="btn btn-success btn-md" (click)="signup()">Submit</button>
+<button class="btn1 btn btn-danger btn-md"(click)="BackButton()" >Cancel</button>
+</form>
+
+</body>
