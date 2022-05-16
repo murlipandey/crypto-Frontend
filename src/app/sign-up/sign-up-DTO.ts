@@ -19,6 +19,7 @@ export class SignUp {
     public zip: string;
     public zip4: string;
     public aadharNumber: string;
+    public balance : string;
 }
 
 export class SignUpDto {
@@ -41,6 +42,7 @@ export class SignUpDto {
             zip: this.sharedservice.getZip(),
             zip4: this.sharedservice.getZip4(),
             aadharNumber: this.sharedservice.getAadharNumber(),
+            balance:this.sharedservice.getBalance(),
         };
         return signupdata;
     }

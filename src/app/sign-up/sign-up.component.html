@@ -23,7 +23,12 @@
   <div class="col-sm-6">
     <input type="password" name="Password" class="colRight"  (change)="sharedservice.setPassword($event.target.value)"></div>
 </div>
-
+<div class="row">
+  <div class="col-sm-6">
+    <label class="colLeft">Wells Fargo Crypto Coin: </label></div>
+  <div class="col-sm-6">
+     <input type="text" name="cryptocoin" class="colRight"  (change)="sharedservice.setBalance($event.target.value)"  required></div>
+</div>
 <div class="row">
   <div class="col-sm-6">
     <label class="colLeft">FirstName: </label></div>

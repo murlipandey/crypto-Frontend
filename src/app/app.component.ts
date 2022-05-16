@@ -24,14 +24,14 @@ export class AppComponent implements OnInit{
 
    forgetPassword():void
   {
-  //  this.router.navigate([routeNames.FORGETPWD]);
+   this.router.navigate([routeNames.FORGETPWD]);
   }
    signup():void
   {
-   // this.router.navigate([routeNames.SIGNUPFORM]);
+   this.router.navigate([routeNames.SIGNUPFORM]);
   }
   loginPage():void
   {
-   // this.router.navigate([routeNames.HOMEPAGE]);
+    this.router.navigate([routeNames.HOMEPAGE]);
   }
 }

@@ -3,6 +3,7 @@ export const routeNames= {
     LOGINFORM:'loginForm',
     SIGNUPFORM:'signeUP',
     FORGETPWD:'forgetpasswd',
-    HOMEPAGE:'Dashboard'
+    HOMEPAGE:'Dashboard',
+    COMPLAIN:"Complain"
 };
 

@@ -21,11 +21,32 @@ export class SharedServiceService {
   private zip:string;
   private zip4:string;
   private aadharNumber:string;
+  private Balance:string;
+  private amount:string;
+  private timestamp:string;
+  private transactionID:string;
+  private digitalSignature:string;
+  private address:string;
 
   constructor() { }
 
   setUserID(UserID: string){
     this.userId = UserID;
+  }
+  setAddress(address:string)
+  {
+    this.address = address;
+  }
+  setTimestamp(timestamp:string)
+  {
+    this.timestamp = timestamp;
+  }
+  setTransactionID(transactionID:string)
+  {
+    this.transactionID = transactionID;
+  }
+  setBalance(Balance: string){
+    this.Balance = Balance;
   }
   setPassword(Password: string){
     this.password = Password;
@@ -35,6 +56,10 @@ export class SharedServiceService {
   }
   setLastName(LastName: string){
     this.lastName = LastName;
+  }
+  setDigitalSignature(digitalSignature:string)
+  {
+     this.digitalSignature = digitalSignature;
   }
   setMobileNumber(MobileNumber: string){
     this.mobileNumber = MobileNumber;
@@ -66,16 +91,32 @@ export class SharedServiceService {
   setZip4(Zip4: string){
     this.zip4 = Zip4;
   }
+  
   setAadharNumber(AadharNumber: string){
     this.aadharNumber = AadharNumber;
   }
- 
-
+  setAmount(amount: string){
+    this.amount= amount;
+  }
+  getBalance(): string{
+    return this.Balance;
+  }
+  getTimestamp()
+  {
+    return this.timestamp ;
+  }
   getUserID(): string{
     return this.userId;
   }
   getPassword(): string{
     return this.password;
+  }
+  getAmount(amount: string){
+    return this.amount;
+  }
+  getTransactionID()
+  {
+   return this.transactionID ;
   }
   getFirstName(): string{
     return this.firstName;
@@ -89,7 +130,10 @@ export class SharedServiceService {
   getemailId(): string{
     return this.emailId;
   }
-  
+  getDigitalSignature(digitalSignature:string)
+  {
+    return this.digitalSignature ;
+  }
   getaddressLine1(): string{
     return this.addressLine1;
   }
@@ -104,6 +148,10 @@ export class SharedServiceService {
   }
   getState(): string{
     return this.state;
+  }
+  getAddress()
+  {
+    return this.address ;
   }
   getCountry(): string{
     return this.country;

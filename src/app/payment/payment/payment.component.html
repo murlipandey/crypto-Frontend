@@ -1,0 +1,66 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<div style="text-align:center">
+<h1>
+  Welcome to Crypto World !
+</h1>
+
+</div>
+
+<div style="text-align:center">
+  <h2>
+  <label >Balance: </label>
+  <label >   100 $</label> 
+</h2>
+  </div>
+
+<body>
+  <form style="text-align:center">
+<div class="row">
+  <div class="col-sm-6">
+    <label class="colLeft">Address: </label></div>
+  <div class="col-sm-6">
+    <input type="text" name="address" class="colRight" (change)="sharedservice.setAddress($event.target.value)" required></div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <label class="colLeft">amount </label></div>
+  <div class="col-sm-6">
+    <input type="text" name="amount" class="colRight"  (change)="sharedservice.setAmount($event.target.value)"></div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <label class="colLeft">TimeStamp: </label></div>
+  <div class="col-sm-6">
+    <input type="text" name="Timestamp" class="colRight"  (change)="sharedservice.setTimestamp($event.target.value)"></div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <label class="colLeft">Transaction ID: </label></div>
+  <div class="col-sm-6">
+    <input type="text" name="transactionID" class="colRight"  (change)="sharedservice.settransactionID($event.target.value)"></div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <label class="colLeft">MobileNumber: </label></div>
+  <div class="col-sm-6">
+    <input type="text" name="MobileNumber"  class="colRight" (change)="sharedservice.setMobileNumber($event.target.value)" ngModel pattern="^\d{10}$" required></div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <label class="colLeft">Digital Signature </label></div>
+  <div class="col-sm-6">
+    <input type="email" name="digitalSignature"  class="colRight" (change)="sharedservice.setDigitalSignature($event.target.value)"></div>
+</div>
+
+<button  class="btn btn-success btn-md" (click)="QRCodepayment()">QR Code Scan</button>
+<button class="btn1 btn btn-danger btn-md"(click)="payment()" >Payment</button>
+</form>
+
+</body>

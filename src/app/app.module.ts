@@ -12,6 +12,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
 import { Pipe, PipeTransform } from '@angular/core';
 import {HttpClientModule, HttpHeaders, HttpClient } from '@angular/common/http';
+import { PaymentComponent } from './payment/payment/payment.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import {HttpClientModule, HttpHeaders, HttpClient } from '@angular/common/http';
     SignUpComponent,
     ForgetPasswordComponent,
     ComplainBoxComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
